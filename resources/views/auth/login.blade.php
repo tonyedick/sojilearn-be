@@ -18,11 +18,11 @@
                 @csrf
                 <div>
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="form-input" name="email" required autofocus autocomplete="username"  />
+                    <input id="email" type="email" class="form-input" name="email" required autofocus autocomplete="off" />
                 </div>
                 <div>
                     <label for="password">Password</label>
-                    <input id="password" type="password" class="form-input" name="password" required autocomplete="current-password" />
+                    <input id="password" type="password" class="form-input" name="password" required autocomplete="off" />
                 </div>
                 <div>
                     <label for="remember_me" class="cursor-pointer">
