@@ -6,7 +6,7 @@
                     <img class="w-8 ltr:-ml-1 rtl:-mr-1 inline" src="/assets/images/logo-light.png"
                         alt="image" />
                     <span
-                        class="text-2xl ltr:ml-1.5 rtl:mr-1.5  font-semibold  align-middle hidden md:inline dark:text-white-light transition-all duration-300">VRISTO</span>
+                        class="text-2xl ltr:ml-1.5 rtl:mr-1.5  font-semibold  align-middle hidden md:inline dark:text-white-light transition-all duration-300">SOJILEARN</span>
                 </a>
 
                 <a href="javascript:;"
@@ -216,17 +216,15 @@
                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                     <a href="javascript:;" class="relative group" @click="toggle()">
                         <span><img class="w-9 h-9 rounded-full object-cover saturate-50 group-hover:saturate-100"
-                                src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"  /></span>
+                                src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /></span>
                     </a>
-                    @endif
                     <ul x-cloak x-show="open" x-transition x-transition.duration.300ms
                         class="ltr:right-0 rtl:left-0 text-dark dark:text-white-dark top-11 !py-0 w-[230px] font-semibold dark:text-white-light/90">
                         <li>
                             <div class="flex items-center px-4 py-4">
                                 <div class="flex-none">
                                     <img class="rounded-md w-10 h-10 object-cover"
-                                        src="/assets/images/user-profile.jpeg"
-                                        alt="image" />
+                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </div>
                                 <div class="ltr:pl-4 rtl:pr-4">
                                     <h4 class="text-base">{{ Auth::user()->name }}
@@ -281,6 +279,7 @@
                             </li>
                         </form>
                     </ul>
+                    @endif
                 </div>
             </div>
         </div>

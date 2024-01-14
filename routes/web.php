@@ -38,4 +38,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/profile/update', function () {
+        return view('profile.update-profile');
+    })->name('profile.update.profile');
 });
