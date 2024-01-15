@@ -13,13 +13,13 @@
             <div class="flex items-center justify-between mb-5">
                 <h5 class="font-semibold text-lg dark:text-white-light">Application Profile</h5>
             </div>
-            <div x-data="{ tab: 'home' }">
+            <div x-data="{ tab: 'info' }">
                 <ul
                     class="sm:flex font-semibold border-b border-[#ebedf2] dark:border-[#191e3a] mb-5 whitespace-nowrap overflow-y-auto">
                     <li class="inline-block">
                         <a href="javascript:;"
                             class="flex gap-2 p-4 border-b border-transparent hover:border-primary hover:text-primary"
-                            :class="{ '!border-primary text-primary': tab == 'home' }" @click="tab='home'">
+                            :class="{ '!border-primary text-primary': tab == 'info' }" @click="tab='info'">
 
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
@@ -120,7 +120,7 @@
                         </a>
                     </li>
                 </ul>
-                <template x-if="tab === 'home'">
+                <template x-if="tab === 'info'">
                     <div>
                         <form
                             class="border border-[#ebedf2] dark:border-[#191e3a] rounded-md p-4 mb-5 bg-white dark:bg-[#0e1726]">
@@ -244,26 +244,11 @@
                                     </div>
                                     <input type="text" placeholder="jimmy_turner" class="form-input" />
                                 </div>
-                                <div class="flex">
-                                    <div
-                                        class="bg-[#eee] flex justify-center items-center rounded px-3 font-semibold dark:bg-[#1b2e4b] ltr:mr-2 rtl:ml-2">
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-5 h-5">
-                                            <path
-                                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <input type="text" placeholder="jimmy_turner" class="form-input" />
-                                </div>
                             </div>
                         </form>
                     </div>
                 </template>
-                <template x-if="tab === 'payment-details'">
+                <template x-if="tab === 'contact'">
                     <div>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
                             <div class="panel">
@@ -465,7 +450,213 @@
                         </div>
                     </div>
                 </template>
-                <template x-if="tab === 'preferences'">
+                <template x-if="tab === 'family'">
+                    <div class="switch">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Choose Theme</h5>
+                                <div class="flex justify-around">
+                                    <label class="inline-flex cursor-pointer">
+                                        <input class="form-radio ltr:mr-4 rtl:ml-4 cursor-pointer" type="radio"
+                                            name="flexRadioDefault" checked="" />
+                                        <span>
+                                            <img class="ms-3" width="100" height="68" alt="settings-dark"
+                                                src="/assets/images/settings-light.svg" />
+                                        </span>
+                                    </label>
+
+                                    <label class="inline-flex cursor-pointer">
+                                        <input class="form-radio ltr:mr-4 rtl:ml-4 cursor-pointer" type="radio"
+                                            name="flexRadioDefault" />
+                                        <span>
+                                            <img class="ms-3" width="100" height="68" alt="settings-light"
+                                                src="/assets/images/settings-dark.svg" />
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Activity data</h5>
+                                <p>Download your Summary, Task and Payment History Data</p>
+                                <button type="button" class="btn btn-primary">Download Data</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Public Profile</h5>
+                                <p>Your <span class="text-primary">Profile</span> will be visible to anyone on the
+                                    network.</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox1" />
+                                    <span for="custom_switch_checkbox1"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Show my email</h5>
+                                <p>Your <span class="text-primary">Email</span> will be visible to anyone on the
+                                    network.</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox2" />
+                                    <span for="custom_switch_checkbox2"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Enable keyboard shortcuts</h5>
+                                <p>When enabled, press <span class="text-primary">ctrl</span> for help</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox3" />
+                                    <span for="custom_switch_checkbox3"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Hide left navigation</h5>
+                                <p>Sidebar will be <span class="text-primary">hidden</span> by default</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox4" />
+                                    <span for="custom_switch_checkbox4"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Advertisements</h5>
+                                <p>Display <span class="text-primary">Ads</span> on your dashboard</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox5" />
+                                    <span for="custom_switch_checkbox5"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Social Profile</h5>
+                                <p>Enable your <span class="text-primary">social</span> profiles on this network</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox6" />
+                                    <span for="custom_switch_checkbox6"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template x-if="tab === 'education'">
+                    <div class="switch">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Choose Theme</h5>
+                                <div class="flex justify-around">
+                                    <label class="inline-flex cursor-pointer">
+                                        <input class="form-radio ltr:mr-4 rtl:ml-4 cursor-pointer" type="radio"
+                                            name="flexRadioDefault" checked="" />
+                                        <span>
+                                            <img class="ms-3" width="100" height="68" alt="settings-dark"
+                                                src="/assets/images/settings-light.svg" />
+                                        </span>
+                                    </label>
+
+                                    <label class="inline-flex cursor-pointer">
+                                        <input class="form-radio ltr:mr-4 rtl:ml-4 cursor-pointer" type="radio"
+                                            name="flexRadioDefault" />
+                                        <span>
+                                            <img class="ms-3" width="100" height="68" alt="settings-light"
+                                                src="/assets/images/settings-dark.svg" />
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Activity data</h5>
+                                <p>Download your Summary, Task and Payment History Data</p>
+                                <button type="button" class="btn btn-primary">Download Data</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Public Profile</h5>
+                                <p>Your <span class="text-primary">Profile</span> will be visible to anyone on the
+                                    network.</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox1" />
+                                    <span for="custom_switch_checkbox1"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Show my email</h5>
+                                <p>Your <span class="text-primary">Email</span> will be visible to anyone on the
+                                    network.</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox2" />
+                                    <span for="custom_switch_checkbox2"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Enable keyboard shortcuts</h5>
+                                <p>When enabled, press <span class="text-primary">ctrl</span> for help</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox3" />
+                                    <span for="custom_switch_checkbox3"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Hide left navigation</h5>
+                                <p>Sidebar will be <span class="text-primary">hidden</span> by default</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox4" />
+                                    <span for="custom_switch_checkbox4"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Advertisements</h5>
+                                <p>Display <span class="text-primary">Ads</span> on your dashboard</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox5" />
+                                    <span for="custom_switch_checkbox5"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                            <div class="panel space-y-5">
+                                <h5 class="font-semibold text-lg mb-4">Social Profile</h5>
+                                <p>Enable your <span class="text-primary">social</span> profiles on this network</p>
+                                <label class="w-12 h-6 relative">
+                                    <input type="checkbox"
+                                        class="custom_switch absolute w-full h-full opacity-0 z-10 cursor-pointer peer"
+                                        id="custom_switch_checkbox6" />
+                                    <span for="custom_switch_checkbox6"
+                                        class="bg-[#ebedf2] dark:bg-dark block h-full rounded-full before:absolute before:left-1 before:bg-white  dark:before:bg-white-dark dark:peer-checked:before:bg-white before:bottom-1 before:w-4 before:h-4 before:rounded-full peer-checked:before:left-7 peer-checked:bg-primary before:transition-all before:duration-300"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template x-if="tab === 'documents'">
                     <div class="switch">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
                             <div class="panel space-y-5">

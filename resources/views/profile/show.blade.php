@@ -175,8 +175,8 @@
                             <table class="whitespace-nowrap">
                                 <tbody class="dark:text-white-dark">
                                     <tr>
-                                        <td>Email</td>
-                                        <td class="text-center">NIL</td>
+                                        <td>Email: </td>
+                                        <td class="text-center">{{ Auth::user()->email }}</td>
                                     </tr>
                                     <tr>
                                         <td>Current Location</td>
