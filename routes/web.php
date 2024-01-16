@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SubscribeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.coming-soon');
 });
 
 Route::get('/auth/signup', function () {
