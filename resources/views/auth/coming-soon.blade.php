@@ -1,6 +1,4 @@
 <x-layout.auth>
-
-
     <div class="flex min-h-screen items-center justify-center dark:bg-dark-dark-light">
         <div class="w-full lg:w-1/2 h-full" x-data="comingsoon">
             <div class="max-w-[480px] mx-auto p-5 md:p-10">
@@ -26,6 +24,7 @@
                     </div>
                 </div>
                 <h3 class="text-xl font-bold mb-10 text-center">Subscribe to get notified!</h3>
+
                 <form method="POST" class="mb-5" action="{{ route('auth.coming-soon') }}">
                     @csrf
                     <div class="relative max-w-[580px] mx-auto">
@@ -43,7 +42,7 @@
                         </span>
                         <input type="email" id="email" name="email" placeholder="Email"
                             class="form-input ltr:pl-9 rtl:pr-9 py-3 ltr:pr-[100px] rtl:pl-[100px]" autocomplete="off"/>
-                        <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl" @click="showAlert()">Subscribe</button>
+                        <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl">Subscribe</button>
                     </div>
                 </form>
                 <p class="text-center"> © 2024. <a href="/" class="router-link-active">SOJILEARN</a> All Rights
@@ -91,44 +90,5 @@
             }));
         });
     </script>
-    <!-- <script>
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("comingsoon", () => ({
-
-            onSuccess() {
-                const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                padding: '2em',
-                });
-                Toast.fire({
-                icon: 'success',
-                title: 'Subscribed Successfully!',
-                padding: '2em',
-                });
-            },
-            onError() {
-                const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                icon: 'error',
-                title: 'An unexpected error occurred',
-                padding: '2em',
-                });
-                Toast.fire();
-            },
-            mounted() {
-                if (window.Laravel.success) {
-                this.onSuccess();
-                }
-                if (window.Laravel.error) {
-                this.onError();
-                }
-            },
-            }));
-        });
-    </script> -->
 
 </x-layout.auth>
