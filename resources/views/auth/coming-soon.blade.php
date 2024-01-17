@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <h3 class="text-xl font-bold mb-10 text-center">Subscribe to get notified!</h3>
-                <form method="POST" class="mb-5" action="{{ route('auth.comping-soon') }}">
+                <form method="POST" class="mb-5" action="{{ route('auth.coming-soon') }}">
                     @csrf
                     <div class="relative max-w-[580px] mx-auto">
                         <span class="absolute ltr:left-2 rtl:right-2 top-3 text-primary">
@@ -46,7 +46,7 @@
                         <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl">Subscribe</button>
                     </div>
                 </form>
-                <p class="text-center"> © 2022. <a href="/" class="router-link-active">SOJILEARN</a> All Rights
+                <p class="text-center"> © 2024. <a href="/" class="router-link-active">SOJILEARN</a> All Rights
                     Reserved.</p>
             </div>
         </div>
@@ -68,7 +68,7 @@
                 },
                 setTimerDemo1() {
                     let date = new Date();
-                    date.setFullYear(date.getFullYear() + 30);
+                    date.setFullYear(date.getFullYear() + 1);
                     let countDownDate = date.getTime();
 
                     this.timer1 = setInterval(() => {
@@ -76,7 +76,7 @@
 
                         let distance = countDownDate - now;
 
-                        this.demo1.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        this.demo1.days = Math.floor(distance / (10000 * 60 * 60 * 24));
                         this.demo1.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (
                             1000 * 60 * 60));
                         this.demo1.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 *
