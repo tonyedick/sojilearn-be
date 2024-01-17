@@ -44,3 +44,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         return view('profile.update-profile');
     })->name('profile.update.profile');
 });
+
+Route::post('auth/coming-soon', [SubscribeController::class, 'store'])->name('auth.coming-soon');

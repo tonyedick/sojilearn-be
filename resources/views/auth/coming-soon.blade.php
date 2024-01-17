@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <h3 class="text-xl font-bold mb-10 text-center">Subscribe to get notified!</h3>
-                <form method="POST" class="mb-5" action="{{ route('store') }}">
+                <form method="POST" class="mb-5" action="{{ route('auth.comping-soon') }}">
                     @csrf
                     <div class="relative max-w-[580px] mx-auto">
                         <span class="absolute ltr:left-2 rtl:right-2 top-3 text-primary">
