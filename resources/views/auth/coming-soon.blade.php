@@ -42,8 +42,8 @@
                             </svg>
                         </span>
                         <input type="email" id="email" name="email" placeholder="Email"
-                            class="form-input ltr:pl-9 rtl:pr-9 py-3 ltr:pr-[100px] rtl:pl-[100px]" />
-                        <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl">Subscribe</button>
+                            class="form-input ltr:pl-9 rtl:pr-9 py-3 ltr:pr-[100px] rtl:pl-[100px]" autocomplete="off"/>
+                        <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl" @click="showAlert()">Subscribe</button>
                     </div>
                 </form>
                 <p class="text-center"> © 2024. <a href="/" class="router-link-active">SOJILEARN</a> All Rights
@@ -91,10 +91,9 @@
             }));
         });
     </script>
-    <script>
+    <!-- <script>
         document.addEventListener("alpine:init", () => {
             Alpine.data("comingsoon", () => ({
-            // ... other Alpine data
 
             onSuccess() {
                 const Toast = Swal.mixin({
@@ -120,8 +119,6 @@
                 });
                 Toast.fire();
             },
-
-            // Check for session flashes on mount
             mounted() {
                 if (window.Laravel.success) {
                 this.onSuccess();
@@ -132,6 +129,6 @@
             },
             }));
         });
-    </script>
+    </script> -->
 
 </x-layout.auth>
