@@ -41,7 +41,7 @@
                                     stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </span>
-                        <input type="email" placeholder="Email"
+                        <input type="email" id="email" name="email" placeholder="Email"
                             class="form-input ltr:pl-9 rtl:pr-9 py-3 ltr:pr-[100px] rtl:pl-[100px]" />
                         <button class="btn btn-primary absolute top-0 ltr:right-0 rtl:left-0 py-2.5 rounded-bl-3xl">Subscribe</button>
                     </div>
@@ -88,6 +88,48 @@
                         }
                     }, 500);
                 },
+            }));
+        });
+    </script>
+    <script>
+        document.addEventListener("alpine:init", () => {
+            Alpine.data("comingsoon", () => ({
+            // ... other Alpine data
+
+            onSuccess() {
+                const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                padding: '2em',
+                });
+                Toast.fire({
+                icon: 'success',
+                title: 'Subscribed Successfully!',
+                padding: '2em',
+                });
+            },
+            onError() {
+                const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                icon: 'error',
+                title: 'An unexpected error occurred',
+                padding: '2em',
+                });
+                Toast.fire();
+            },
+
+            // Check for session flashes on mount
+            mounted() {
+                if (window.Laravel.success) {
+                this.onSuccess();
+                }
+                if (window.Laravel.error) {
+                this.onError();
+                }
+            },
             }));
         });
     </script>

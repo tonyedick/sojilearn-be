@@ -18,6 +18,7 @@
     "dependencies": {
         "@tailwindcss/line-clamp": "^0.4.4",
         "prettier": "^3.1.1",
-        "prettier-plugin-tailwindcss": "^0.5.10"
+        "prettier-plugin-tailwindcss": "^0.5.10",
+        "toastr": "^2.1.4"
     }
 }

@@ -15,14 +15,14 @@ class SubscribeController extends Controller
             ]);
 
             if ($result) {
-                return response()->json(['message' => 'Successfully subscribed'], 200);
+                return redirect('/')->with('success','Subscribed Sucessfully');
             } else {
-                return response()->json(['message' => 'Something went wrong, please try again'], 400);
+                return redirect('/')->with('error','An unexpected error occured, please try again');
             }
         } catch (\Exception $e) {
             \Log::error($e);
 
-            return response()->json(['message' => 'An unexpected error occurred'], 500);
+            return redirect('/')->with('error','An unexpected error occurred');
         }
     }
 }
