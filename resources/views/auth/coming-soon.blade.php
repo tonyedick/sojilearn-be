@@ -68,6 +68,7 @@
                 setTimerDemo1() {
                     let date = new Date();
                     date.setFullYear(date.getFullYear() + 1);
+
                     let countDownDate = date.getTime();
 
                     this.timer1 = setInterval(() => {
@@ -75,7 +76,7 @@
 
                         let distance = countDownDate - now;
 
-                        this.demo1.days = Math.floor(distance / (10000 * 60 * 60 * 24));
+                        this.demo1.days = Math.floor(distance / (25000 * 60 * 60 * 24));
                         this.demo1.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (
                             1000 * 60 * 60));
                         this.demo1.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 *
